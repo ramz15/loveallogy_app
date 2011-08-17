@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate, :only => [:index, :edit, :update]
+  before_filter :authenticate, :only => [:index, :edit, :update, :destroy]
   before_filter :correct_user, :only => [:edit, :update]
   before_filter :admin_user,   :only => :destroy
   
@@ -14,21 +14,29 @@ class UsersController < ApplicationController
   end
   
   def new
-    @user = User.new
-    @title = "Sign up"
+    if signed_in?
+      redirect_to root_path
+    else
+      @user = User.new
+      @title = "Sign up"
+    end
   end
   
   def create 
-    @user = User.new(params[:user])
-    if @user.save
-      sign_in @user
-      flash[:success] = "Welcome to LoveALLogy!"
-      redirect_to @user
+    if signed_in?
+      redirect_to root_path
     else
-      @title = "Sign up"
-      @user.password = ""
-      @user.password_confirmation = ""
-      render 'new'
+      @user = User.new(params[:user])
+      if @user.save
+        sign_in @user
+        flash[:success] = "Welcome to LoveALLogy!"
+        redirect_to @user
+      else
+        @title = "Sign up"
+        @user.password = ""
+        @user.password_confirmation = ""
+        render 'new'
+      end
     end
   end
   

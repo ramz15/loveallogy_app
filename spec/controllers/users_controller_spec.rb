@@ -118,9 +118,35 @@ describe UsersController do
       get :new
       response.should have_selector("input[name='user[password_confirmation]'][type='password']")
     end
+    
+    describe "for signed-in users" do
+
+      before(:each) do
+        @user = Factory(:user)
+        test_sign_in(@user)
+      end
+
+      it "should redirect /new to root url if user is signed in" do
+        get :new, :id => @user
+        response.should redirect_to(root_path)
+      end
+    end
   end
   
   describe "POST 'create'" do
+    
+    describe "for signed-in users" do
+
+      before(:each) do
+        @user = Factory(:user)
+        test_sign_in(@user)
+      end
+      
+     it "should redirect /create to root url if user is signed in" do
+        get :create, :id => @user
+        response.should redirect_to(root_path)
+      end
+    end
 
     describe "failure" do
 
@@ -289,6 +315,7 @@ describe UsersController do
       end
     end
   end  
+  
   describe "DELETE 'destroy'" do
 
     before(:each) do
