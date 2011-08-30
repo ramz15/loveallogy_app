@@ -85,13 +85,27 @@ a.signup_button {
   margin-right: auto;
   display: block;
   text-align: center;
-  width: 190px;
+  font-weight: bold;
+  width: 250px;
+  cursor: pointer;
   color: #fff;
-  background: #00CC00;
   font-size: 150%;
   font-weight: bold;
-  padding: 20px;
+  padding: 10px;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6);
+  border: 1px solid #459A00;
+  border-radius: .3em;
+  -moz-border-radius: .3em;
+  -webkit-border-radius: .3em;
+  box-shadow: inset 0 0 .2em rgba(255,255,255,0.3),inset 0 0 .2em rgba(255,255,255,0.3),0 1px 2px rgba(0,0,0,0.3);
+  -o-box-shadow: inset 0 0 .2em rgba(255,255,255,0.3),inset 0 0 .2em rgba(255,255,255,0.3),0 1px 2px rgba(0,0,0,0.3);
+  -moz-box-shadow: inset 0 0 .2em rgba(255,255,255,0.3),inset 0 0 .2em rgba(255,255,255,0.3),0 1px 2px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 .2em rgba(255,255,255,0.3),inset 0 0 .2em rgba(255,255,255,0.3),0 1px 2px rgba(0,0,0,0.3); 
+  background: -webkit-gradient(linear,center top,center bottom,from(#5CCD00),to(#40B300));
+  background: -moz-linear-gradient(top,#5CCD00,#4AA400);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, from(rgb(92, 205, 0)), to(rgb(74, 164, 0)));
 }
+
 
 /* Round corners */
 
@@ -99,6 +113,25 @@ a.signup_button {
   -moz-border-radius:    10px;
   -webkit-border-radius: 10px;
   border-radius:         10px;
+}
+
+/* Home Page */
+h2.home {
+  text-align: center;
+}
+
+/* Sign In Page */
+.signin {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Sign Up Page */
+.signup {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 /* Footer */

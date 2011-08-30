@@ -113,8 +113,8 @@ describe UsersController do
     end 
     
     it "should show the user's microposts" do
-      mp1 = Factory(:micropost, :user = @user, :content = "Foo bar")
-      mp2 = Factory(:micropost, :user = @user, :content = "Changes")
+      mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
+      mp2 = Factory(:micropost, :user => @user, :content => "Changes")
       get :show, :id => @user
       response.should have_selector("span.content", :content => mp1.content)
       response.should have_selector("span.content", :content => mp2.content)

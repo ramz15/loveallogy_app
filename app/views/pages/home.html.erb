@@ -1,6 +1,19 @@
-<h1 style="font-family: Kreon, serif;">LoveALLogy</h1>
-    <p>
-      This is the home page for the <a href="http://loveallogy.org/">LoveALLogy</a> movement.
-    </p>
-    
-    <%= link_to "Sign up now!", signup_path, :class => "signup_button round"%>
+<% if signed_in? %>
+  <table class="front" summary="For signed-in users">
+    <tr>
+      <td class="main">
+        <h1 class="micropost">Random act of kindness:</h1>
+        <%= render 'shared/micropost_form' %>
+        <%= render 'shared/feed' %>
+      </td>
+      <td class="sidebar round">
+        <%= render 'shared/user_info' %>
+      </td>
+    </tr>
+  </table>
+<% else %>     
+  <h2 class="home">Live your Dream. Change the World. 
+  </h2>
+  
+  <%= link_to "Join your Dream", signup_path, :class => "signup_button round"%>
+<% end %>
