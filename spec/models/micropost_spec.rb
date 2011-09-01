@@ -14,7 +14,7 @@ describe Micropost do
   describe "user associations" do
     
     before(:each) do
-      @micropost = @user.micropost.create(@attr)
+      @micropost = @user.microposts.create(@attr)
     end
     
     it "should have a user attribute" do
