@@ -29,6 +29,8 @@ GEM
       activemodel (= 3.0.9)
       activesupport (= 3.0.9)
     activesupport (3.0.9)
+    acts-as-taggable-on (2.1.1)
+      rails
     annotate (2.4.0)
     arel (2.0.10)
     autotest (4.4.6)
@@ -111,6 +113,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on (~> 2.1.0)
   annotate (= 2.4.0)
   autotest (= 4.4.6)
   autotest-fsevent (= 0.2.4)
