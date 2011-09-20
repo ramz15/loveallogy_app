@@ -5,4 +5,4 @@ require File.expand_path('../config/application', __FILE__)
 require 'rake/dsl_definition'
 require 'rake'
 
-Loveallogy::Application.load_tasks
+Loveallogy_tut::Application.load_tasks

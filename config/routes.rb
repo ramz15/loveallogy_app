@@ -1,4 +1,4 @@
-Loveallogy::Application.routes.draw do
+Loveallogy_tut::Application.routes.draw do
   resources :users do
     member do
       get :following, :followers
