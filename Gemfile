@@ -17,6 +17,7 @@ group :development do
   gem 'hpricot'
   gem 'ruby_parser'
   gem 'capybara'
+  gem 'rspec-rails', '2.6.1'
 end
 
 group :test do
